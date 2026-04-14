@@ -20,6 +20,11 @@ app.get('/api/health', (req, res) => {
   res.json({ message: 'Server is running' });
 });
 
+// Root endpoint
+app.get('/', (req, res) => {
+  res.json({ message: 'Secure Authentication API Server', status: 'running' });
+});
+
 // Error handling middleware
 app.use((err, req, res, next) => {
   console.error(err.stack);
